@@ -1,21 +1,12 @@
 const path = require('path')
 
 module.exports = app => {
-  const dirs = []
-
-  app.router.load = dir => {
-    if (!path.isAbsolute(dir)) {
-      dir = path.join(app.baseDir, dir)
-    }
-    dirs.push(dir)
-  }
-
-  /**
-   * After loaded all routers of plugins, load 'app/route.js'
-   */
-  const loadRouter = app.loader.loadRouter
+  const routerPaths = app.loader.getLoadUnits().map(
+    u => path.join(u.path, app.config.hanabiRouterLoader.path)
+  )
   app.loader.loadRouter = function() {
-    dirs.forEach(dir => app.loader.loadFile(dir))
-    loadRouter.call(app.loader)
+    routerPaths.forEach(i => {
+      app.loader.loadFile(i)
+    })
   }
 }

@@ -41,14 +41,6 @@
   "ci": {
     "version": "8, 9"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eggjs/egg-hanabi-router-loader.git"
-  },
-  "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
-  },
-  "homepage": "https://github.com/eggjs/egg-hanabi-router-loader#readme",
   "author": "Illyrix",
   "license": "MIT"
 }

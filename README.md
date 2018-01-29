@@ -3,6 +3,7 @@
 Router loader for hanabi
 
 ## Install
+Recommend to install this plugin by path.
 
 ## Usage
 
@@ -14,23 +15,16 @@ exports.hanabiRouterLoader = {
 };
 ```
 
+App will load `app/router.js` from each [load unit](https://eggjs.org/en/advanced/loader.html#loadunit) by default.
+
 ## Configuration
 
 ```js
 // {app_root}/config/config.default.js
 exports.hanabiRouterLoader = {
+  path: 'app/router.js'
 };
 ```
-
-see [config/config.default.js](config/config.default.js) for more detail.
-
-## Example
-
-<!-- example here -->
-
-## Questions & Suggestions
-
-Please open an issue [here](https://github.com/eggjs/egg/issues).
 
 ## License
 
